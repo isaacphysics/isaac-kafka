@@ -1,0 +1,16 @@
+version: "2"
+services:
+  kafka:
+    container_name: kafka
+    image: ucamcldtg/kafka
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /local/data/kafka:/kafka-data:rw
+      - ./server.properties:/opt/kafka/config/server.properties:ro
+
+networks:
+  default:
+    external:
+      name: isaac
