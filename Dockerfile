@@ -14,7 +14,10 @@ RUN wget -q "https://www-eu.apache.org/dist/kafka/${KAFKA_VERSION}/kafka_${SCALA
    ln -s /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION} /opt/kafka
 
 
+
 ENV KAFKA_HOME /opt/kafka
 ENV PATH ${PATH}:${KAFKA_HOME}/bin
 
-CMD ["/opt/kafka/bin/kafka-server-start.sh", "/opt/kafka/config/server.properties"]
+COPY run.sh /run.sh
+
+CMD ["/run.sh"]
