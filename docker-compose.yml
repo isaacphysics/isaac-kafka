@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /local/data/kafka:/kafka-data:rw
+      - /local/data/kafka-live:/kafka-data:rw
       - ./server.properties.template:/opt/kafka/config/server.properties.template:ro
 
 networks:
