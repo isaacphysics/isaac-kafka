@@ -3,9 +3,14 @@ services:
   kafka:
     container_name: kafka
     image: ucamcldtg/kafka
+    networks:
+      default:
+        ipv4_address: $LOCAL_KAFKA
     build:
       context: .
       dockerfile: Dockerfile
+    extra_hosts:
+      - local-kafka:$LOCAL_KAFKA
     volumes:
       - /local/data/kafka:/kafka-data:rw
       - ./server.properties:/opt/kafka/config/server.properties:ro
