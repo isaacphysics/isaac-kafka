@@ -2,7 +2,7 @@ version: "2"
 services:
   kafka:
     container_name: kafka
-    image: ucamcldtg/kafka
+    image: ucamcldtg/kafka-cluster
     build:
       context: .
       dockerfile: Dockerfile
