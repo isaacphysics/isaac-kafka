@@ -3,6 +3,11 @@ services:
   kafka:
     container_name: kafka
     image: ucamcldtg/kafka-cluster
+    restart: always
+    logging:
+      driver: journald
+      options:
+        tag: kafka
     build:
       context: .
       dockerfile: Dockerfile
