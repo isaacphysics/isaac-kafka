@@ -8,6 +8,8 @@ services:
       driver: journald
       options:
         tag: kafka
+    external_links:
+      - zookeeper-cluster-live:zookeeper
     build:
       context: .
       dockerfile: Dockerfile
