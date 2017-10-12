@@ -1,7 +1,7 @@
 version: "2"
 services:
   kafka:
-    container_name: kafka
+    container_name: kafka-cluster-live
     image: ucamcldtg/kafka-cluster
     restart: always
     logging:
