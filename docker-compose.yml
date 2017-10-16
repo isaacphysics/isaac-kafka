@@ -14,7 +14,6 @@ services:
     volumes:
       - /local/data/kafka-live:/kafka-data:rw
       - ./server.properties.template:/opt/kafka/config/server.properties.template:ro
-      - ./log4j.properties:/opt/kafka/config/log4j.properties:ro
     environment:
       KAFKA_HEAP_OPTS: "-Xmx2G -Xms2G"      
 networks:
